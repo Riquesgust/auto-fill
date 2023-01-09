@@ -5,8 +5,16 @@ itens = input()
 itens = itens.split('/')
 for i in range(1, len(itens)):
     itens[i] = itens[i].replace(",", ".")
-print(itens)
 aList = []
+
+
+for i in range(0,len(itens)):
+    print(i)
+    for j in range(i+1, int(itens[i])+1):
+        print(itens[j])
+    
+    i=1+int(itens[i])
+    print(i)
 
 for i in range(1, len(itens)):
     decimals = int(len(itens[i].split('.')[1]))
