@@ -17,22 +17,36 @@ def main():
     my_dataframe = pd.DataFrame()
     while(True):
         itens = input().split('/')
-        for i in range(1, len(itens)):
+        for i in range(0, len(itens)):
             itens[i] = itens[i].replace(",", ".")
+        print(itens)
     #For each entry value it will determine the number of decimals, and create 2 random numbers from it
-        for i in range(1, len(itens)):
-            decimals = int(len(itens[i].split('.')[1]))
-            aList = []
-            for j in range(3):
-                if j == 0:
-                    aList.append((str(round(float(itens[i]), decimals))).replace(".",","))
-                else:
-                    randomFactor = randrange(0,10)
-                    randomFactor = (randomFactor/(10**(decimals-1)))
-                    x = random.uniform(-randomFactor, randomFactor)
-                    y = float(itens[i])
-                    z = (str(round((x+y), decimals))).replace(".", ",")
-                    aList.append(z)
+        for i in range(0, len(itens)):
+            print(itens[i])
+            if(itens[i].find(".")!= -1):
+                decimals = int(len(itens[i].split('.')[1]))
+                aList = []
+                for j in range(3):
+                    if j == 0:
+                        aList.append((str(round(float(itens[i]), decimals))).replace(".",","))
+                    else:
+                        randomFactor = randrange(0,10)
+                        randomFactor = (randomFactor/(10**(decimals)))
+                        x = random.uniform(-randomFactor, randomFactor)
+                        y = float(itens[i])
+                        z = (str(round((x+y), decimals))).replace(".", ",")
+                        aList.append(z)
+            else:
+                aList = []
+                for j in range(3):
+                    if j == 0:
+                        aList.append(itens[i])
+                    else: 
+                        y = int(itens[i])
+                        factor = 4/100            
+                        x = randrange(int(-y*factor),int(y*factor))
+                        print("y = ", y, "x =", x)
+                        aList.append(str(x+y))
             #Creating a list with the random numbers created
             my_list = [aList[0], aList[1], aList[2]]
             # append my list as a row in the dataframe.
