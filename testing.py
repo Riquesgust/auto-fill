@@ -1,6 +1,4 @@
-import random
-from random import randrange
-import decimal
+
 
 finaList = []
 while(True):
@@ -25,3 +23,5 @@ while(True):
     finaList.append(aList)
     if((input("Continue?:").lower()) != ""):
         break
+
+
