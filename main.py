@@ -23,16 +23,9 @@ def main():
     # rename dataframe columns using dictionaries.
     my_dataframe = my_dataframe.rename(
         columns={
-            0: "Identificador",
-            1: "N° Fatura",
-            2: "Mês",
-            3: "Data Emissão",
-            4: "Data Vencimento",
-            5: "Entrega ACI",
-            6: "Iluminação Pública",
-            7: "Valor Líquido",
-            8: "DARF",
-            9: "Valor Bruto",
+            0: "1° medida",
+            1: "2° medida",
+            2: "3° medida"
         }
     )
 
