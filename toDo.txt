@@ -1,2 +1,1 @@
-1st think how you are going to take a input, read the number of rows, the values and how you will stop it.
-Print it and see if it works. When done, go to xls implementation. 
+Get the the whole numbers to work.

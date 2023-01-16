@@ -8,7 +8,9 @@ import pathlib
 import random
 from random import randrange
 import decimal
+import math
 #--------
+
 
 
 def main():
@@ -23,30 +25,31 @@ def main():
     #For each entry value it will determine the number of decimals, and create 2 random numbers from it
         for i in range(0, len(itens)):
             print(itens[i])
+    #Distinguish between float and int strings
             if(itens[i].find(".")!= -1):
                 decimals = int(len(itens[i].split('.')[1]))
                 aList = []
                 for j in range(3):
                     if j == 0:
-                        aList.append((str(round(float(itens[i]), decimals))).replace(".",","))
+                        aList.append(((round(float(itens[i]), decimals))))
                     else:
                         randomFactor = randrange(0,10)
                         randomFactor = (randomFactor/(10**(decimals)))
                         x = random.uniform(-randomFactor, randomFactor)
                         y = float(itens[i])
-                        z = (str(round((x+y), decimals))).replace(".", ",")
+                        z = ((round((x+y), decimals)))
                         aList.append(z)
             else:
                 aList = []
                 for j in range(3):
                     if j == 0:
-                        aList.append(itens[i])
+                        aList.append(float(itens[i]))
                     else: 
                         y = int(itens[i])
-                        factor = 4/100            
-                        x = randrange(int(-y*factor),int(y*factor))
+                        z = (int(round((math.log(y, 10)))))
+                        x = random.randrange((-z-1),(z+1))
                         print("y = ", y, "x =", x)
-                        aList.append(str(x+y))
+                        aList.append(int(x+y))
             #Creating a list with the random numbers created
             my_list = [aList[0], aList[1], aList[2]]
             # append my list as a row in the dataframe.
