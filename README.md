@@ -1,3 +1,3 @@
 # auto-fill
 
-The user inputs the number of rows, and the first value of each row. The program generate 3 random numbers, and formate them in a xls file. 
+The user input the numbers, separating them with "/". The program generate 3 random numbers, based on the entered numbers and save them in a xlsx file. 

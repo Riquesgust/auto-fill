@@ -21,10 +21,8 @@ def main():
         itens = input().split('/')
         for i in range(0, len(itens)):
             itens[i] = itens[i].replace(",", ".")
-        print(itens)
     #For each entry value it will determine the number of decimals, and create 2 random numbers from it
         for i in range(0, len(itens)):
-            print(itens[i])
     #Distinguish between float and int strings
             if(itens[i].find(".")!= -1):
                 decimals = int(len(itens[i].split('.')[1]))
@@ -48,7 +46,6 @@ def main():
                         y = int(itens[i])
                         z = (int(round((math.log(y, 10)))))
                         x = random.randrange((-z-1),(z+1))
-                        print("y = ", y, "x =", x)
                         aList.append(int(x+y))
             #Creating a list with the random numbers created
             my_list = [aList[0], aList[1], aList[2]]
@@ -56,6 +53,10 @@ def main():
             my_list = pd.Series(my_list)
             # append the list of keywords as a row to my dataframe.
             my_dataframe = my_dataframe.append(my_list, ignore_index=True)
+        
+        my_list = ["-", "-", "-"]
+        my_list = pd.Series(my_list)
+        my_dataframe = my_dataframe.append(my_list, ignore_index=True)
 
         if((input("Continue?:").lower()) != ""):
             break
